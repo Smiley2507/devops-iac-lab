@@ -29,3 +29,6 @@ terraform.rc
 
 # Ignore lock info files (not the dependency lock file)
 .terraform.tfstate.lock.info
+
+# claude files
+.claude/
