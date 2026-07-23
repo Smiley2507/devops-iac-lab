@@ -1,0 +1,385 @@
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mDeprecated Parameter[0m
+[33m│[0m [0m
+[33m│[0m [0m[0mThe parameter "dynamodb_table" is deprecated. Use parameter "use_lockfile" instead.
+[33m╵[0m[0m
+Acquiring state lock. This may take a few moments...
+[0m[1mdata.http.my_ip: Reading...[0m[0m
+[0m[1mtls_private_key.ssh: Refreshing state... [id=42938146d58c661a3f0de7926b9d358a31537eab][0m
+[0m[1mlocal_file.private_key: Refreshing state... [id=493e3e6d279616340d1dedf51989339c370c9436][0m
+[0m[1mdata.http.my_ip: Read complete after 1s [id=https://checkip.amazonaws.com][0m
+[0m[1mdata.aws_ami.amazon_linux_2023: Reading...[0m[0m
+[0m[1maws_key_pair.generated: Refreshing state... [id=devops-iac-lab-key][0m
+[0m[1maws_vpc.main: Refreshing state... [id=vpc-058c50208e4d0eb35][0m
+[0m[1mdata.aws_ami.amazon_linux_2023: Read complete after 3s [id=ami-0f471498ff04f1a83][0m
+[0m[1maws_internet_gateway.main: Refreshing state... [id=igw-03217ddd6e5fe396c][0m
+[0m[1maws_subnet.public: Refreshing state... [id=subnet-040c1511668696e93][0m
+[0m[1maws_security_group.web: Refreshing state... [id=sg-062ed43a0e5d73842][0m
+[0m[1maws_route_table.public: Refreshing state... [id=rtb-0b7c8e4bd47352f57][0m
+[0m[1maws_route_table_association.public: Refreshing state... [id=rtbassoc-0711e69e01a9bbc97][0m
+[0m[1maws_instance.web: Refreshing state... [id=i-02048ef4f4218a822][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.web[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_instance" "web" {
+      [31m-[0m[0m ami                                  = "ami-0f471498ff04f1a83" [90m-> null[0m[0m
+      [31m-[0m[0m arn                                  = "arn:aws:ec2:us-east-1:188776114506:instance/i-02048ef4f4218a822" [90m-> null[0m[0m
+      [31m-[0m[0m associate_public_ip_address          = true [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                    = "us-east-1a" [90m-> null[0m[0m
+      [31m-[0m[0m cpu_core_count                       = 1 [90m-> null[0m[0m
+      [31m-[0m[0m cpu_threads_per_core                 = 2 [90m-> null[0m[0m
+      [31m-[0m[0m disable_api_stop                     = false [90m-> null[0m[0m
+      [31m-[0m[0m disable_api_termination              = false [90m-> null[0m[0m
+      [31m-[0m[0m ebs_optimized                        = false [90m-> null[0m[0m
+      [31m-[0m[0m get_password_data                    = false [90m-> null[0m[0m
+      [31m-[0m[0m hibernation                          = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                   = "i-02048ef4f4218a822" [90m-> null[0m[0m
+      [31m-[0m[0m instance_initiated_shutdown_behavior = "stop" [90m-> null[0m[0m
+      [31m-[0m[0m instance_state                       = "running" [90m-> null[0m[0m
+      [31m-[0m[0m instance_type                        = "t3.micro" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_address_count                   = 0 [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_addresses                       = [] [90m-> null[0m[0m
+      [31m-[0m[0m key_name                             = "devops-iac-lab-key" [90m-> null[0m[0m
+      [31m-[0m[0m monitoring                           = false [90m-> null[0m[0m
+      [31m-[0m[0m placement_partition_number           = 0 [90m-> null[0m[0m
+      [31m-[0m[0m primary_network_interface_id         = "eni-0351f28ce741412a4" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns                          = "ip-10-0-1-74.ec2.internal" [90m-> null[0m[0m
+      [31m-[0m[0m private_ip                           = "10.0.1.74" [90m-> null[0m[0m
+      [31m-[0m[0m public_dns                           = "ec2-100-55-6-3.compute-1.amazonaws.com" [90m-> null[0m[0m
+      [31m-[0m[0m public_ip                            = "100.55.6.3" [90m-> null[0m[0m
+      [31m-[0m[0m secondary_private_ips                = [] [90m-> null[0m[0m
+      [31m-[0m[0m security_groups                      = [] [90m-> null[0m[0m
+      [31m-[0m[0m source_dest_check                    = true [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id                            = "subnet-040c1511668696e93" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                 = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-ec2"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                             = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-ec2"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tenancy                              = "default" [90m-> null[0m[0m
+      [31m-[0m[0m user_data_replace_on_change          = false [90m-> null[0m[0m
+      [31m-[0m[0m vpc_security_group_ids               = [
+          [31m-[0m[0m "sg-062ed43a0e5d73842",
+        ] [90m-> null[0m[0m
+        [90m# (7 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m capacity_reservation_specification {
+          [31m-[0m[0m capacity_reservation_preference = "open" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m cpu_options {
+          [31m-[0m[0m core_count       = 1 [90m-> null[0m[0m
+          [31m-[0m[0m threads_per_core = 2 [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+      [31m-[0m[0m credit_specification {
+          [31m-[0m[0m cpu_credits = "unlimited" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m enclave_options {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m maintenance_options {
+          [31m-[0m[0m auto_recovery = "default" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m metadata_options {
+          [31m-[0m[0m http_endpoint               = "enabled" [90m-> null[0m[0m
+          [31m-[0m[0m http_protocol_ipv6          = "disabled" [90m-> null[0m[0m
+          [31m-[0m[0m http_put_response_hop_limit = 2 [90m-> null[0m[0m
+          [31m-[0m[0m http_tokens                 = "required" [90m-> null[0m[0m
+          [31m-[0m[0m instance_metadata_tags      = "disabled" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m private_dns_name_options {
+          [31m-[0m[0m enable_resource_name_dns_a_record    = false [90m-> null[0m[0m
+          [31m-[0m[0m enable_resource_name_dns_aaaa_record = false [90m-> null[0m[0m
+          [31m-[0m[0m hostname_type                        = "ip-name" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m root_block_device {
+          [31m-[0m[0m delete_on_termination = true [90m-> null[0m[0m
+          [31m-[0m[0m device_name           = "/dev/xvda" [90m-> null[0m[0m
+          [31m-[0m[0m encrypted             = false [90m-> null[0m[0m
+          [31m-[0m[0m iops                  = 3000 [90m-> null[0m[0m
+          [31m-[0m[0m tags                  = {} [90m-> null[0m[0m
+          [31m-[0m[0m tags_all              = {} [90m-> null[0m[0m
+          [31m-[0m[0m throughput            = 125 [90m-> null[0m[0m
+          [31m-[0m[0m volume_id             = "vol-068419e73082796ce" [90m-> null[0m[0m
+          [31m-[0m[0m volume_size           = 30 [90m-> null[0m[0m
+          [31m-[0m[0m volume_type           = "gp3" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1m  # aws_internet_gateway.main[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_internet_gateway" "main" {
+      [31m-[0m[0m arn      = "arn:aws:ec2:us-east-1:188776114506:internet-gateway/igw-03217ddd6e5fe396c" [90m-> null[0m[0m
+      [31m-[0m[0m id       = "igw-03217ddd6e5fe396c" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id = "188776114506" [90m-> null[0m[0m
+      [31m-[0m[0m tags     = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-igw"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-igw"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id   = "vpc-058c50208e4d0eb35" [90m-> null[0m[0m
+    }
+
+[1m  # aws_key_pair.generated[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_key_pair" "generated" {
+      [31m-[0m[0m arn             = "arn:aws:ec2:us-east-1:188776114506:key-pair/devops-iac-lab-key" [90m-> null[0m[0m
+      [31m-[0m[0m fingerprint     = "69:d8:2b:15:c5:be:74:d7:19:d0:3c:28:d3:42:f5:17" [90m-> null[0m[0m
+      [31m-[0m[0m id              = "devops-iac-lab-key" [90m-> null[0m[0m
+      [31m-[0m[0m key_name        = "devops-iac-lab-key" [90m-> null[0m[0m
+      [31m-[0m[0m key_pair_id     = "key-00ae43b44704e4278" [90m-> null[0m[0m
+      [31m-[0m[0m key_type        = "rsa" [90m-> null[0m[0m
+      [31m-[0m[0m public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDd9PTYHvqwEuPcJu7+a/A3Px1h5M7Nka+CUDyz8+5SW9cQ1PT2uB7XuEVqc1SDEyXWP5EQcS7FWeQUELudODHmWuirdXLtxbAlka7Hf+Oan/Dr7Ce9PNgy/nmn3Bd7exI2AGOcg6wiZ4zZAxDNxtzMhl6mbih4alU0194U0zonPNlxywnxHLtNKhLLMCOf09NvEGA5nAgiPji8zFxeVZh2NNxc6Y9Hgaru7r2msBzHCO/iPYqtUS3VkysaYLIXuLmVxrrUSUyFA/7qSXzeTfuwo/Bc1x9CvrBkFrC6SnL2VDnjKkDjkZt6acD+ih5rxafERddB//XpbkAarrQWxVTm+8VO5zxPGd8kzbBpy/ENbQxfOG4C/L42mxs+yxi6MshCxq67DFAr5sU+OLnCKZJeMoJER/0fYslnjMESL0wg6aP+fuCXytdsJ6e9Qk0y4wvQD9f1ItRgOgUvGaxZX3dVIyIVP5s737uXNV8Wq/kq2/cjuOOS9bJPHotQ/OAfzDS1EL93rB+LYUBcCmw5vUtxYQLl7Hfpc5UPZt07GVm42ApAuH+4d324IkU+UmEw5viE50yx7LEwWLe3IiOqJ+1+XO7tHaVTYQdOOEAGipknpIh3/xWKINWJccccfGxtuUbzI+Kx2pCSDTbfXowhOZ7exZmUPEUKNynrexab5UOZbQ==" [90m-> null[0m[0m
+      [31m-[0m[0m tags            = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all        = {} [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_route_table.public[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table" "public" {
+      [31m-[0m[0m arn              = "arn:aws:ec2:us-east-1:188776114506:route-table/rtb-0b7c8e4bd47352f57" [90m-> null[0m[0m
+      [31m-[0m[0m id               = "rtb-0b7c8e4bd47352f57" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id         = "188776114506" [90m-> null[0m[0m
+      [31m-[0m[0m propagating_vgws = [] [90m-> null[0m[0m
+      [31m-[0m[0m route            = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_block                 = "0.0.0.0/0"
+              [31m-[0m[0m gateway_id                 = "igw-03217ddd6e5fe396c"
+                [90m# (11 unchanged attributes hidden)[0m[0m
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags             = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-public-rt"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all         = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-public-rt"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id           = "vpc-058c50208e4d0eb35" [90m-> null[0m[0m
+    }
+
+[1m  # aws_route_table_association.public[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "public" {
+      [31m-[0m[0m id             = "rtbassoc-0711e69e01a9bbc97" [90m-> null[0m[0m
+      [31m-[0m[0m route_table_id = "rtb-0b7c8e4bd47352f57" [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id      = "subnet-040c1511668696e93" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_security_group.web[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "web" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:us-east-1:188776114506:security-group/sg-062ed43a0e5d73842" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "Allow SSH from my IP and HTTP from anywhere" [90m-> null[0m[0m
+      [31m-[0m[0m egress                 = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m description      = "Allow all outbound traffic"
+              [31m-[0m[0m from_port        = 0
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "-1"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 0
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sg-062ed43a0e5d73842" [90m-> null[0m[0m
+      [31m-[0m[0m ingress                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m description      = "HTTP from anywhere"
+              [31m-[0m[0m from_port        = 80
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 80
+            },
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "41.186.139.175/32",
+                ]
+              [31m-[0m[0m description      = "SSH from my current public IP"
+              [31m-[0m[0m from_port        = 22
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 22
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "devops-iac-lab-sg" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id               = "188776114506" [90m-> null[0m[0m
+      [31m-[0m[0m revoke_rules_on_delete = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-sg"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-sg"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                 = "vpc-058c50208e4d0eb35" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_subnet.public[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "public" {
+      [31m-[0m[0m arn                                            = "arn:aws:ec2:us-east-1:188776114506:subnet/subnet-040c1511668696e93" [90m-> null[0m[0m
+      [31m-[0m[0m assign_ipv6_address_on_creation                = false [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                              = "us-east-1a" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone_id                           = "use1-az1" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                                     = "10.0.1.0/24" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns64                                   = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_lni_at_device_index                     = 0 [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_a_record_on_launch    = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                             = "subnet-040c1511668696e93" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_native                                    = false [90m-> null[0m[0m
+      [31m-[0m[0m map_customer_owned_ip_on_launch                = false [90m-> null[0m[0m
+      [31m-[0m[0m map_public_ip_on_launch                        = true [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                                       = "188776114506" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns_hostname_type_on_launch            = "ip-name" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                           = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-public-subnet"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                       = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-public-subnet"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                                         = "vpc-058c50208e4d0eb35" [90m-> null[0m[0m
+        [90m# (4 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_vpc.main[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc" "main" {
+      [31m-[0m[0m arn                                  = "arn:aws:ec2:us-east-1:188776114506:vpc/vpc-058c50208e4d0eb35" [90m-> null[0m[0m
+      [31m-[0m[0m assign_generated_ipv6_cidr_block     = false [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                           = "10.0.0.0/16" [90m-> null[0m[0m
+      [31m-[0m[0m default_network_acl_id               = "acl-01e16b83106fa3809" [90m-> null[0m[0m
+      [31m-[0m[0m default_route_table_id               = "rtb-0323e73422a29d03f" [90m-> null[0m[0m
+      [31m-[0m[0m default_security_group_id            = "sg-030c7afe6dc3c6679" [90m-> null[0m[0m
+      [31m-[0m[0m dhcp_options_id                      = "dopt-00f62237b1fb84af3" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns_hostnames                 = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns_support                   = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_network_address_usage_metrics = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                   = "vpc-058c50208e4d0eb35" [90m-> null[0m[0m
+      [31m-[0m[0m instance_tenancy                     = "default" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_netmask_length                  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m main_route_table_id                  = "rtb-0323e73422a29d03f" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                             = "188776114506" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                 = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-vpc"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                             = {
+          [31m-[0m[0m "Name" = "devops-iac-lab-vpc"
+        } [90m-> null[0m[0m
+        [90m# (4 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # local_file.private_key[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "local_file" "private_key" {
+      [31m-[0m[0m content              = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha256 = "iPGOjh7XNcKpNohi9J5wVebqX2c4r1U6uoTVKyAqEkY=" [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha512 = "rSgDAXGVw5hcVdKpbjpMOKr8uoMeYxqGLu1Oyju2gq8EL6QSlQa0Yl+9gp9vwOJ0PdMcJ9IyRMXu3tpZxiC9Hw==" [90m-> null[0m[0m
+      [31m-[0m[0m content_md5          = "a79d71217810a6f86e9857af32b6e01c" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha1         = "493e3e6d279616340d1dedf51989339c370c9436" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha256       = "88f18e8e1ed735c2a9368862f49e7055e6ea5f6738af553aba84d52b202a1246" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha512       = "ad2803017195c3985c55d2a96e3a4c38aafcba831e631a862eed4eca3bb682af042fa4129506b4625fbd829f6fc0e2743dd31c27d23244c5eededa59c620bd1f" [90m-> null[0m[0m
+      [31m-[0m[0m directory_permission = "0777" [90m-> null[0m[0m
+      [31m-[0m[0m file_permission      = "0400" [90m-> null[0m[0m
+      [31m-[0m[0m filename             = "./devops-iac-lab-key.pem" [90m-> null[0m[0m
+      [31m-[0m[0m id                   = "493e3e6d279616340d1dedf51989339c370c9436" [90m-> null[0m[0m
+    }
+
+[1m  # tls_private_key.ssh[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "tls_private_key" "ssh" {
+      [31m-[0m[0m algorithm                     = "RSA" [90m-> null[0m[0m
+      [31m-[0m[0m ecdsa_curve                   = "P224" [90m-> null[0m[0m
+      [31m-[0m[0m id                            = "42938146d58c661a3f0de7926b9d358a31537eab" [90m-> null[0m[0m
+      [31m-[0m[0m private_key_openssh           = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m private_key_pem               = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m private_key_pem_pkcs8         = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m public_key_fingerprint_md5    = "51:0a:c8:2b:55:b3:ab:4d:d1:4e:82:9e:3b:b5:cb:af" [90m-> null[0m[0m
+      [31m-[0m[0m public_key_fingerprint_sha256 = "SHA256:oS7+EpBHF8QCLMzwKtDwygJg2rL4h02PaZ29n7qdcBU" [90m-> null[0m[0m
+      [31m-[0m[0m public_key_openssh            = <<-EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDd9PTYHvqwEuPcJu7+a/A3Px1h5M7Nka+CUDyz8+5SW9cQ1PT2uB7XuEVqc1SDEyXWP5EQcS7FWeQUELudODHmWuirdXLtxbAlka7Hf+Oan/Dr7Ce9PNgy/nmn3Bd7exI2AGOcg6wiZ4zZAxDNxtzMhl6mbih4alU0194U0zonPNlxywnxHLtNKhLLMCOf09NvEGA5nAgiPji8zFxeVZh2NNxc6Y9Hgaru7r2msBzHCO/iPYqtUS3VkysaYLIXuLmVxrrUSUyFA/7qSXzeTfuwo/Bc1x9CvrBkFrC6SnL2VDnjKkDjkZt6acD+ih5rxafERddB//XpbkAarrQWxVTm+8VO5zxPGd8kzbBpy/ENbQxfOG4C/L42mxs+yxi6MshCxq67DFAr5sU+OLnCKZJeMoJER/0fYslnjMESL0wg6aP+fuCXytdsJ6e9Qk0y4wvQD9f1ItRgOgUvGaxZX3dVIyIVP5s737uXNV8Wq/kq2/cjuOOS9bJPHotQ/OAfzDS1EL93rB+LYUBcCmw5vUtxYQLl7Hfpc5UPZt07GVm42ApAuH+4d324IkU+UmEw5viE50yx7LEwWLe3IiOqJ+1+XO7tHaVTYQdOOEAGipknpIh3/xWKINWJccccfGxtuUbzI+Kx2pCSDTbfXowhOZ7exZmUPEUKNynrexab5UOZbQ==
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m public_key_pem                = <<-EOT
+            -----BEGIN PUBLIC KEY-----
+            MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA3fT02B76sBLj3Cbu/mvw
+            Nz8dYeTOzZGvglA8s/PuUlvXENT09rge17hFanNUgxMl1j+REHEuxVnkFBC7nTgx
+            5lroq3Vy7cWwJZGux3/jmp/w6+wnvTzYMv55p9wXe3sSNgBjnIOsImeM2QMQzcbc
+            zIZepm4oeGpVNNfeFNM6JzzZccsJ8Ry7TSoSyzAjn9PTbxBgOZwIIj44vMxcXlWY
+            djTcXOmPR4Gq7u69prAcxwjv4j2KrVEt1ZMrGmCyF7i5lca61ElMhQP+6kl83k37
+            sKPwXNcfQr6wZBawukpy9lQ54ypA45GbemnA/ooea8WnxEXXQf/16W5AGq60FsVU
+            5vvFTuc8TxnfJM2wacvxDW0MXzhuAvy+NpsbPssYujLIQsauuwxQK+bFPji5wimS
+            XjKCREf9H2LJZ4zBEi9MIOmj/n7gl8rXbCenvUJNMuML0A/X9SLUYDoFLxmsWV93
+            VSMiFT+bO9+7lzVfFqv5Ktv3I7jjkvWyTx6LUPzgH8w0tRC/d6wfi2FAXApsOb1L
+            cWEC5ex36XOVD2bdOxlZuNgKQLh/uHd9uCJFPlJhMOb4hOdMseyxMFi3tyIjqift
+            flzu7R2lU2EHTjhABoqZJ6SId/8ViiDViXHHHHxsbblG8yPisdqQkg02316MITme
+            3sWZlDxFCjcp63sWm+VDmW0CAwEAAQ==
+            -----END PUBLIC KEY-----
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m rsa_bits                      = 4096 [90m-> null[0m[0m
+    }
+
+[1mPlan:[0m [0m0 to add, 0 to change, 10 to destroy.
+
+Changes to Outputs:
+  [31m-[0m[0m instance_id            = "i-02048ef4f4218a822" [90m-> null[0m[0m
+  [31m-[0m[0m instance_public_ip     = "100.55.6.3" [90m-> null[0m[0m
+  [31m-[0m[0m internet_gateway_id    = "igw-03217ddd6e5fe396c" [90m-> null[0m[0m
+  [31m-[0m[0m my_detected_ip         = "41.186.139.175/32" [90m-> null[0m[0m
+  [31m-[0m[0m public_subnet_id       = "subnet-040c1511668696e93" [90m-> null[0m[0m
+  [31m-[0m[0m security_group_id      = "sg-062ed43a0e5d73842" [90m-> null[0m[0m
+  [31m-[0m[0m ssh_connection_command = "ssh -i devops-iac-lab-key.pem ec2-user@100.55.6.3" [90m-> null[0m[0m
+  [31m-[0m[0m vpc_id                 = "vpc-058c50208e4d0eb35" [90m-> null[0m[0m
+[0m[1m
+Do you really want to destroy all resources?[0m
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  [1mEnter a value:[0m [0m
+[0m[1mlocal_file.private_key: Destroying... [id=493e3e6d279616340d1dedf51989339c370c9436][0m[0m
+[0m[1mlocal_file.private_key: Destruction complete after 0s[0m
+[0m[1maws_instance.web: Destroying... [id=i-02048ef4f4218a822][0m[0m
+[0m[1maws_instance.web: Still destroying... [id=i-02048ef4f4218a822, 00m10s elapsed][0m[0m
+[0m[1maws_instance.web: Still destroying... [id=i-02048ef4f4218a822, 00m20s elapsed][0m[0m
+[0m[1maws_instance.web: Still destroying... [id=i-02048ef4f4218a822, 00m30s elapsed][0m[0m
+[0m[1maws_instance.web: Still destroying... [id=i-02048ef4f4218a822, 00m40s elapsed][0m[0m
+[0m[1maws_instance.web: Destruction complete after 44s[0m
+[0m[1maws_key_pair.generated: Destroying... [id=devops-iac-lab-key][0m[0m
+[0m[1maws_security_group.web: Destroying... [id=sg-062ed43a0e5d73842][0m[0m
+[0m[1maws_route_table_association.public: Destroying... [id=rtbassoc-0711e69e01a9bbc97][0m[0m
+[0m[1maws_key_pair.generated: Destruction complete after 1s[0m
+[0m[1mtls_private_key.ssh: Destroying... [id=42938146d58c661a3f0de7926b9d358a31537eab][0m[0m
+[0m[1mtls_private_key.ssh: Destruction complete after 0s[0m
+[0m[1maws_route_table_association.public: Destruction complete after 1s[0m
+[0m[1maws_route_table.public: Destroying... [id=rtb-0b7c8e4bd47352f57][0m[0m
+[0m[1maws_subnet.public: Destroying... [id=subnet-040c1511668696e93][0m[0m
+[0m[1maws_subnet.public: Destruction complete after 1s[0m
+[0m[1maws_security_group.web: Destruction complete after 3s[0m
+[0m[1maws_route_table.public: Destruction complete after 2s[0m
+[0m[1maws_internet_gateway.main: Destroying... [id=igw-03217ddd6e5fe396c][0m[0m
+[0m[1maws_internet_gateway.main: Destruction complete after 2s[0m
+[0m[1maws_vpc.main: Destroying... [id=vpc-058c50208e4d0eb35][0m[0m
+[0m[1maws_vpc.main: Destruction complete after 1s[0m
+Releasing state lock. This may take a few moments...
+[0m[1m[32m
+Destroy complete! Resources: 10 destroyed.[0m
