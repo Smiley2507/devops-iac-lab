@@ -1,0 +1,121 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="tf-aws-arch" name="Architecture">
+    <mxGraphModel dx="1706" dy="1007" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2900" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="1390" width="1720" x="190" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;spacing=8;" value="&lt;b&gt;&lt;font style=&quot;font-size: 23px;&quot;&gt;IaC with Terraform: AWS Infrastructure and Remote Backend&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="700" x="700" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="tfcli" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5C4EE5;strokeColor=#3B2F8F;fontColor=#ffffff;fontStyle=1;fontSize=13;arcSize=8;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Terraform CLI (local)&lt;br&gt;WSL2 / Linux&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="220" x="320" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="rsbgroup" parent="1" style="fillColor=none;strokeColor=#5A6C86;dashed=1;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontColor=#5A6C86;fontSize=12;align=center;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Remote State Backend (bootstrap)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="260" width="440" x="900" y="1398" as="geometry" />
+        </mxCell>
+        <mxCell id="s3icon" parent="1" style="shape=mxgraph.aws4.bucket;strokeColor=none;fillColor=#7AA116;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=12;fontColor=#232F3E;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;S3 Bucket&lt;br&gt;terraform.tfstate&lt;/font&gt;" vertex="1">
+          <mxGeometry height="78" width="78" x="950" y="1459" as="geometry" />
+        </mxCell>
+        <mxCell id="ddbicon" parent="1" style="sketch=0;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.dynamodb;strokeColor=#ffffff;fillColor=#C925D1;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=12;fontColor=#232F3E;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;DynamoDB Table&lt;br&gt;state lock (LockID)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="78" width="78" x="1180" y="1435" as="geometry" />
+        </mxCell>
+        <mxCell id="awsprovider" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#232F3E;fontSize=12;arcSize=10;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;AWS Provider&lt;br&gt;(AWS API)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="430" y="1053" as="geometry" />
+        </mxCell>
+        <mxCell id="awscloud" parent="1" style="sketch=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;dashed=1;verticalAlign=top;fontStyle=1;fontSize=14;html=1;align=left;spacingLeft=30;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;AWS Cloud (us-east-1)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="1000" width="920" x="880" y="708" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc" parent="1" style="sketch=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_vpc;strokeColor=#8C4FFF;fillColor=none;verticalAlign=top;fontStyle=1;fontSize=13;html=1;align=left;spacingLeft=30;fontColor=#8C4FFF;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;VPC (10.0.0.0/16)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="590" width="800" x="930" y="788" as="geometry" />
+        </mxCell>
+        <mxCell id="subnet" parent="1" style="sketch=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_public_subnet;strokeColor=#248814;fillColor=none;verticalAlign=top;fontStyle=1;fontSize=12;html=1;align=left;spacingLeft=30;fontColor=#248814;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Public Subnet (10.0.1.0/24, us-east-1a)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="420" width="520" x="980" y="888" as="geometry" />
+        </mxCell>
+        <mxCell id="sgbox" parent="1" style="sketch=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;strokeColor=#DD344C;fillColor=none;dashed=1;verticalAlign=top;fontStyle=1;fontSize=11;html=1;align=center;whiteSpace=wrap;fontColor=#DD344C;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Security Group: SSH 22 (my IP), HTTP 80 (0.0.0.0/0)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="240" width="460" x="1020" y="988" as="geometry" />
+        </mxCell>
+        <mxCell id="ec2icon" parent="1" style="sketch=0;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;strokeColor=#ffffff;fillColor=#ED7100;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=12;fontColor=#232F3E;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;EC2 t3.micro&lt;br&gt;(Amazon Linux 2023)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="78" width="78" x="1120" y="1068" as="geometry" />
+        </mxCell>
+        <mxCell id="routetable" parent="1" style="sketch=0;shape=mxgraph.aws4.route_table;strokeColor=none;fillColor=#8C4FFF;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=12;fontColor=#232F3E;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Public Route Table&lt;br&gt;(0.0.0.0/0 -&amp;gt; IGW)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="78" width="78" x="1580" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="igw" parent="1" style="sketch=0;shape=mxgraph.aws4.internet_gateway;strokeColor=none;fillColor=#8C4FFF;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=12;fontColor=#232F3E;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Internet Gateway&lt;/font&gt;" vertex="1">
+          <mxGeometry height="78" width="78" x="1360" y="748" as="geometry" />
+        </mxCell>
+        <mxCell id="internet" parent="1" style="sketch=0;shape=mxgraph.aws4.internet;strokeColor=none;fillColor=#232F3D;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=12;fontColor=#232F3E;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Internet&lt;/font&gt;" vertex="1">
+          <mxGeometry height="78" width="78" x="700" y="826" as="geometry" />
+        </mxCell>
+        <mxCell id="userip" parent="1" style="sketch=0;shape=mxgraph.aws4.user;strokeColor=none;fillColor=#232F3D;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=12;fontColor=#232F3E;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;User / My IP&lt;/font&gt;" vertex="1">
+          <mxGeometry height="78" width="78" x="391" y="826" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="tfcli" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;labelBackgroundColor=#F5F5F5;fontSize=11;verticalAlign=bottom;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="s3icon" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;reads/writes terraform.tfstate&lt;/font&gt;">
+          <mxGeometry relative="1" x="0.1657" y="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="397" y="1460.05" />
+              <mxPoint x="910.05" y="1460.05" />
+              <mxPoint x="910.05" y="1459" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="tfcli" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;labelBackgroundColor=#F5F5F5;fontSize=11;verticalAlign=bottom;exitX=0.65;exitY=1;exitDx=0;exitDy=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;acquires/releases state lock (LockID)&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="463" y="1580.05" />
+              <mxPoint x="1219" y="1580.05" />
+            </Array>
+            <mxPoint x="1219" y="1510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="tfcli" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;labelBackgroundColor=#F5F5F5;fontSize=11;verticalAlign=bottom;exitX=0.369;exitY=-0.009;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" target="awsprovider" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;provisions resources via AWS provider&lt;/font&gt;">
+          <mxGeometry relative="1" x="-0.6686" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="401.19" y="1083" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="awsprovider" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;labelBackgroundColor=#F5F5F5;fontSize=11;verticalAlign=bottom;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.372;entryDx=0;entryDy=0;entryPerimeter=0;" target="awscloud" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;creates/manages via AWS API calls&lt;/font&gt;">
+          <mxGeometry relative="1" x="0.0512" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="750" y="1083" />
+              <mxPoint x="750" y="1080" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="routetable" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=none;startArrow=none;strokeColor=#8C4FFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.4;entryDx=0;entryDy=0;fontSize=11;labelBackgroundColor=#F5F5F5;" target="subnet" value="associated with">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="routetable" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=none;startArrow=none;strokeColor=#8C4FFF;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="igw" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="igw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=0.551;entryY=0.164;entryDx=0;entryDy=0;exitX=0.509;exitY=0.01;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=default;startArrow=classic;startFill=1;endArrow=none;endFill=0;entryPerimeter=0;" target="internet" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1399.71" y="640" />
+              <mxPoint x="740" y="640" />
+              <mxPoint x="740" y="848" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;labelBackgroundColor=#F5F5F5;fontSize=11;verticalAlign=bottom;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;SSH (22) / HTTP (80)&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="870" as="sourcePoint" />
+            <mxPoint x="685.5454545454545" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YmynkTfJEdyut7_5ZXye-4" parent="1" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;" value="" vertex="1">
+          <mxGeometry height="40" width="40" x="410" y="1028" as="geometry" />
+        </mxCell>
+        <mxCell id="YmynkTfJEdyut7_5ZXye-7" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/assets/digitalocean/1/Developer_Tools_-_Terraform_Provider.png" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="300" y="1220" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
