@@ -67,8 +67,6 @@ Terraform's `backend` block is read during `terraform init`, before any resource
 devops-iac-lab/
 ├── README.md
 ├── .gitignore
-├── apply-output.txt          # full terraform apply log (main-infra)
-├── destroy-output.txt        # full terraform destroy log (main-infra)
 ├── bootstrap/
 │   ├── main.tf                # S3 bucket + DynamoDB table
 │   ├── variables.tf
@@ -80,6 +78,8 @@ devops-iac-lab/
 │   ├── variables.tf
 │   ├── outputs.tf
 │   └── terraform.tfvars
+|   ├── apply-output.txt          # full terraform apply log (main-infra)
+|   ├── destroy-output.txt        # full terraform destroy log (main-infra) 
 └── screenshots/
 ```
 
@@ -98,10 +98,12 @@ This phase creates the S3 bucket (versioned, encrypted, public access blocked) a
 Plan showed 5 resources to add: `aws_s3_bucket`, `aws_s3_bucket_versioning`, `aws_s3_bucket_server_side_encryption_configuration`, `aws_s3_bucket_public_access_block`, `aws_dynamodb_table`.
 
 ![Bootstrap plan](screenshots/bootstrap-plan1.png)
+![Bootstrap plan](screenshots/bootstrap-plan4.png)
 
 ### terraform apply
 
 ![Bootstrap apply](screenshots/bootstrap-apply1.png)
+![Bootstrap apply](screenshots/bootstrap-apply4.png)
 
 Result: **Apply complete! Resources: 5 added, 0 changed, 0 destroyed.**
 
@@ -140,13 +142,14 @@ Plan showed 10 resources to add: VPC, subnet, IGW, route table, route table asso
 
 ![Main-infra plan summary](screenshots/main-plan1.png)
 
-![Main-infra plan, security group rules](screenshots/main-plan4.png)
+![Main-infra plan, security group rules](screenshots/main-plan7.png)
 
 ### terraform apply
 
 The first attempt failed. AWS rejected `t2.micro` as not Free Tier eligible for this account:
 
 ![Apply error, instance type](screenshots/main-applyv1.png)
+![Apply error, instance type](screenshots/main-applyv19.png)
 
 ```
 Error: creating EC2 Instance: ... InvalidParameterCombination:
