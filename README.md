@@ -21,31 +21,7 @@
 
 ## 2. Architecture Overview
 
-```
-                         ┌─────────────────────────────┐
-                         │           AWS VPC            │
-                         │        10.0.0.0/16           │
-                         │                               │
-                         │   ┌───────────────────────┐   │
-   Internet ───IGW───────┼──▶│   Public Subnet        │   │
-                         │   │   10.0.1.0/24          │   │
-                         │   │                        │   │
-                         │   │   ┌────────────────┐   │   │
-                         │   │   │  EC2 (t3.micro) │   │   │
-                         │   │   │  Amazon Linux   │   │   │
-                         │   │   │  2023           │   │   │
-                         │   │   └────────────────┘   │   │
-                         │   │   SG: 22 (my IP),       │   │
-                         │   │       80 (0.0.0.0/0)    │   │
-                         │   └───────────────────────┘   │
-                         └─────────────────────────────┘
-
-  Remote state backend (separate, persistent, reusable project):
-  ┌────────────────────┐        ┌───────────────────────┐
-  │   S3 Bucket          │◀─────▶│  DynamoDB Table        │
-  │   (tfstate storage)  │       │  (state locking)       │
-  └────────────────────┘        └───────────────────────┘
-```
+![architecture diagram](terraform-aws-architecture.png)
 
 This project is split into two Terraform configurations:
 
